@@ -82,5 +82,5 @@ app.delete("/deleteformdata/:id", async (req, res) => {
   `,
     [dataId]
   );
-  res.json(result.rows);
+  res.json({ success: true });
 });
