@@ -21,7 +21,8 @@
 #review-aname,
 #review-score,
 #review-comment {
-  padding: 2px;
+  padding-right: 5px;
+  padding: 1px;
   margin: 1px;
 }
 button,
