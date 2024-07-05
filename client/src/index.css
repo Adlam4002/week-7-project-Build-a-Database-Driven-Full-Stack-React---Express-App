@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+a {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 #root {
   width: 95vw;
   height: 95vh;
@@ -22,6 +26,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+#cat-links {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5vh;
 }
 #form {
   padding-top: 50px;

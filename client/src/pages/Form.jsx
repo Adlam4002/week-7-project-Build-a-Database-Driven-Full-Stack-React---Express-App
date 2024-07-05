@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import AnimeForm from "../components/AnimeForm";
 export default function Form() {
   const [formValues, setFormValues] = useState({
     username: "",
@@ -66,6 +67,7 @@ export default function Form() {
         <select
           name="anime_name"
           id="anime_name-input"
+          value={formValues.anime_name}
           onChange={handleInputChange}
           required
         >
@@ -87,6 +89,7 @@ export default function Form() {
           name="score"
           id="score-input"
           onChange={handleInputChange}
+          value={formValues.score}
           required
         >
           <option value="1">⭐</option>
@@ -104,6 +107,7 @@ export default function Form() {
         <h4 id="review-score">Score: {formValues.score}/5</h4>{" "}
         <p id="review-comment">Review: {formValues.comment}</p>
       </div>
+      <AnimeForm />{" "}
     </>
   );
   //   need two events, one to submit and one to track changes

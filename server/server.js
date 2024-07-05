@@ -46,7 +46,22 @@ app.post("/newreview", async (req, res) => {
     res.status(500).json({ success: false });
   }
 });
-
+app.post("/newanime", async (req, res) => {
+  const { anime_name } = req.body;
+  try {
+    await database.query(
+      `
+    INSERT INTO Anime_list (anime_name)
+    VALUES ($1)
+    `,
+      [anime_name]
+    );
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("You have failed, my child", error);
+    res.status(500).json({ success: false });
+  }
+});
 // STRETCH GOAL
 //update
 app.put("/updateformdata/:id", async (req, res) => {

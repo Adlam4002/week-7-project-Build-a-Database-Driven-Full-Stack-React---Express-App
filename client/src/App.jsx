@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/reviews" element={<Posts />} />
+        <Route path="/reviews" element={<Posts />}></Route>
         <Route path="/submit-a-review" element={<Form />} />
       </Routes>
     </>
