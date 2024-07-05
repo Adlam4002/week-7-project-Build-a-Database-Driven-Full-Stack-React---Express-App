@@ -78,7 +78,7 @@ app.delete("/deleteformdata/:id", async (req, res) => {
   const dataId = req.param.id;
   const result = await database.query(
     `
-  DELETE FROM anime_reviews WHERE id = $1 RETURNING *
+  DELETE FROM anime_reviews WHERE review_id = $1 RETURNING *
   `,
     [dataId]
   );
