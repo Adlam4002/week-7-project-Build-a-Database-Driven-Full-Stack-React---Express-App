@@ -15,6 +15,10 @@
 #navbar {
   display: flex;
 }
+#form {
+  display: flex;
+  flex-direction: column;
+}
 #review-box {
   border-radius: 10px;
   background-color: #3a3a3a;
