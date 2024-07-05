@@ -12,6 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#navbar {
+  display: flex;
+}
 #review-box {
   border-radius: 10px;
   background-color: #3a3a3a;
