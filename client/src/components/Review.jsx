@@ -12,6 +12,9 @@ export default function Review({
         `https://week-7-project-server.onrender.com/deleteformdata/${review_id}`,
         {
           method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       const data = await response.json();
