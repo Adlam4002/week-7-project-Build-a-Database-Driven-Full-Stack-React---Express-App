@@ -9,7 +9,7 @@ export default function Review({
   async function handleDelete() {
     try {
       const response = await fetch(
-        "https://week-7-project-server.onrender.com/deleteformdata/${review_id}",
+        `https://week-7-project-server.onrender.com/deleteformdata/${review_id}`,
         {
           method: "DELETE",
         }
