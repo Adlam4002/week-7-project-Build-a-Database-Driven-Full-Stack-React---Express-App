@@ -7,6 +7,14 @@ export default function Form() {
     anime_name: "",
     score: "",
   });
+  function resetForm() {
+    setFormValues({
+      username: "",
+      comment: "",
+      anime_name: "",
+      score: "",
+    });
+  }
   const [animes, setAnimes] = useState([]);
   async function handleSubmit() {
     event.preventDefault();
@@ -25,6 +33,7 @@ export default function Form() {
       const data = await check.json();
       if (data.success) {
         console.log("Review submitted");
+        resetForm();
       }
     } catch (error) {
       console.error("Error.error");

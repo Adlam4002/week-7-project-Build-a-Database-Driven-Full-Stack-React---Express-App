@@ -21,6 +21,7 @@ export default function AnimeForm() {
       const data = await check.json();
       if (data.success) {
         console.log("Title submitted");
+        setAnime_Name({ anime_name: "" });
       }
     } catch (error) {
       console.error("Error.error");
