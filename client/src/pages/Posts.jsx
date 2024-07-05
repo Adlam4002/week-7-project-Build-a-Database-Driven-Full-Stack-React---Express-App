@@ -8,7 +8,9 @@ export default function Posts() {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     async function fetchReviews() {
-      const response = await fetch("http://localhost:8081/review-list");
+      const response = await fetch(
+        "https://week-7-project-server.onrender.com/review-list"
+      );
       const reviewData = await response.json();
       setReviews(reviewData);
     }

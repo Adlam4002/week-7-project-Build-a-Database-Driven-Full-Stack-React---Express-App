@@ -8,13 +8,16 @@ export default function AnimeForm() {
   async function handleSubmit() {
     event.preventDefault();
     try {
-      const check = await fetch("http://localhost:8081/newanime", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(anime_name),
-      });
+      const check = await fetch(
+        "https://week-7-project-server.onrender.com/newanime",
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(anime_name),
+        }
+      );
       const data = await check.json();
       if (data.success) {
         console.log("Title submitted");

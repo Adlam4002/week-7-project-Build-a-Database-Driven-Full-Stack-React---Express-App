@@ -5,7 +5,9 @@ export default function PostFilter() {
   const [animes, setAnimes] = useState([]);
   useEffect(() => {
     async function fetchAnime() {
-      const response = await fetch("http://localhost:8081/anime-list");
+      const response = await fetch(
+        "https://week-7-project-server.onrender.com/anime-list"
+      );
       const animes = await response.json();
       setAnimes(animes);
     }

@@ -12,13 +12,16 @@ export default function Form() {
     event.preventDefault();
     // const formData = new FormData(formValues);
     try {
-      const check = await fetch("http://localhost:8081/newreview", {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formValues),
-      });
+      const check = await fetch(
+        "https://week-7-project-server.onrender.com/newreview",
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formValues),
+        }
+      );
       const data = await check.json();
       if (data.success) {
         console.log("Review submitted");
@@ -32,7 +35,9 @@ export default function Form() {
   }
   useEffect(() => {
     async function fetchAnime() {
-      const response = await fetch("http://localhost:8081/anime-list");
+      const response = await fetch(
+        "https://week-7-project-server.onrender.com/anime-list"
+      );
       const animes = await response.json();
       setAnimes(animes);
     }
