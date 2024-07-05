@@ -31,13 +31,13 @@ export default function Review({
   return (
     <>
       <div id="review-box" key={review_id}>
-        <h4 id="review-username">
-          User: {username} id {review_id}
-        </h4>{" "}
+        <h4 id="review-username">User: {username}</h4>{" "}
         <h4 id="review-aname">{anime_name}</h4>{" "}
         <h4 id="review-score">Score: {score}/5</h4>{" "}
         <p id="review-comment">Review: {comment}</p>
-        <button onClick={handleDelete}>Delete</button>
+        <button id="delbut" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </>
   );

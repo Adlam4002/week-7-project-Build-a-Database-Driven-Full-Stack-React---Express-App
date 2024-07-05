@@ -120,9 +120,12 @@ button:focus-visible {
     height: fit-content;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-rows: 25% 75%;
+    grid-template-rows: 25% 65% 10%;
     background-color: #3a3a3a;
     margin-bottom: 5px;
+  }
+  #delbut {
+    grid-area: 3/5/4/6;
   }
   #review-username,
   #review-aname,
