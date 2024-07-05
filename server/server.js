@@ -75,7 +75,7 @@ app.put("/updateformdata/:id", async (req, res) => {
 });
 //delete
 app.delete("/deleteformdata/:id", async (req, res) => {
-  const dataId = req.param.id;
+  const dataId = req.params.id;
   const result = await database.query(
     `
   DELETE FROM anime_reviews WHERE review_id = $1 RETURNING *

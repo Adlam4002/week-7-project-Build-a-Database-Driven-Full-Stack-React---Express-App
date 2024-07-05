@@ -30,6 +30,7 @@ export default function Posts() {
         return (
           <Review
             key={item.review_id}
+            review_id={item.review_id}
             username={item.username}
             anime_name={item.anime_name}
             comment={item.comment}
