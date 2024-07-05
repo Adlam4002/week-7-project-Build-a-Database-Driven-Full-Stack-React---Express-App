@@ -146,4 +146,7 @@ button:focus-visible {
     inline-size: 60vw;
     height: fit-content;
   }
+  #home {
+    padding-top: 50px;
+  }
 }
