@@ -11,12 +11,40 @@ export const database = new pg.Pool({
 const app = express();
 app.use(cors());
 app.use(express.json());
-const port = 8080;
+const port = 8081;
 app.listen(port, () => {
   console.log(`Your server is running on port: ${port}`);
 });
 app.get("/", (req, res) => {
   res.json({ Message: "Root route wokring!" });
+});
+app.get("/review-list", async (req, res) => {
+  const result = await database.query(`
+    SELECT review_id, username, comment, anime_name, score FROM Anime_reviews
+    `);
+  res.json(result.rows);
+});
+app.get("/anime-list", async (req, res) => {
+  const result = await database.query(`
+    SELECT * FROM anime_list
+    `);
+  res.json(result.rows);
+});
+app.post("/newreview", async (req, res) => {
+  const { username, comment, anime_name, score } = req.body;
+  try {
+    await database.query(
+      `
+    INSERT INTO Anime_reviews (Username, comment, anime_name, score)
+    VALUES ($1, $2, $3, $4)
+    `,
+      [username, comment, anime_name, score]
+    );
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error("You have failed, my child", error);
+    res.status(500).json({ success: false });
+  }
 });
 
 // STRETCH GOAL

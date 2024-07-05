@@ -1,12 +1,17 @@
 import "./App.css";
+import Header from "./components/Header";
+import Form from "./pages/Form";
+import { Route, Routes } from "react-router-dom";
+import Posts from "./pages/Posts";
 
 function App() {
   return (
     <>
-      <div>
-        {" "}
-        <h1>Testing</h1>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/reviews" element={<Posts />} />
+        <Route path="/submit-a-review" element={<Form />} />
+      </Routes>
     </>
   );
 }
