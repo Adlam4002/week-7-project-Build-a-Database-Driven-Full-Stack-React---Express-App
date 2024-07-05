@@ -29,7 +29,9 @@ export default function Review({
       console.error("Delete error", error);
     }
   }
-
+  if (deleted) {
+    return null;
+  }
   return (
     <>
       <div id="review-box" key={review_id}>
