@@ -1,3 +1,4 @@
+import { useState } from "react";
 export default function Review({
   review_id,
   username,
@@ -5,6 +6,7 @@ export default function Review({
   score,
   anime_name,
 }) {
+  const [deleted, setDeleted] = useState(false);
   async function handleDelete() {
     try {
       const response = await fetch(
@@ -19,6 +21,7 @@ export default function Review({
       const data = await response.json();
       if (data.success) {
         console.log("Deleted");
+        setDeleted(!deleted);
       } else {
         console.error("failed to delete", data.error);
       }
