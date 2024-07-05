@@ -18,7 +18,6 @@ export default function Form() {
   const [animes, setAnimes] = useState([]);
   async function handleSubmit() {
     event.preventDefault();
-    // const formData = new FormData(formValues);
     try {
       const check = await fetch(
         "https://week-7-project-server.onrender.com/newreview",
@@ -52,8 +51,6 @@ export default function Form() {
     }
     fetchAnime();
   }, []);
-  // have an on change so the comments will be previewed, handle the change of user input
-  // the key is the target name, the value is the target value
   return (
     <>
       <form onSubmit={handleSubmit} id="form">
@@ -90,13 +87,6 @@ export default function Form() {
               {item.anime_name}
             </option>
           ))}
-          {/* <option value="Mashle: Magic and Muscles">
-            Mashle: Magic and Muscles
-          </option>
-          <option value="Attack on Titan">Attack on Titan</option>
-          <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
-          <option value="Demon Slayer">Demon Slayer</option>
-          <option value="Chainsaw Man">Chainsaw Man</option> */}
         </select>
         <label htmlFor="score"> Rating out of 5:</label>
         <select
@@ -124,5 +114,4 @@ export default function Form() {
       <AnimeForm />{" "}
     </>
   );
-  //   need two events, one to submit and one to track changes
 }

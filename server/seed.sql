@@ -1,34 +1,22 @@
-import { database } from "./server.js";
-database.query(`
-    CREATE TABLE IF NOT EXISTS Anime 
-    (
-    "anime_id" SERIAL PRIMARY KEY,
-    "anime_name" TEXT NOT NULL,
-    UNIQUE ("anime_name")
-);
-`);
 
-database.query(`CREATE TABLE IF NOT EXISTS Reviews
+CREATE TABLE IF NOT EXISTS Anime_list 
+(
+"anime_id" SERIAL PRIMARY KEY,
+"anime_name" TEXT NOT NULL,
+UNIQUE ("anime_name")
+);
+;
+CREATE TABLE IF NOT EXISTS Anime_reviews
     (
     "review_id" SERIAL PRIMARY KEY,
     "username" VARCHAR(255) NOT NULL,
     "comment" TEXT NOT NULL,
     "anime_name" TEXT NOT NULL,
-    "rating" INTEGER,
-    FOREIGN KEY ("anime_name") REFERENCES "Anime" ("anime_name")
+    "score" INTEGER,
+    FOREIGN KEY ("anime_name") REFERENCES Anime_list ("anime_name")
 )
-`);
-
-database.query(` 
-INSERT INTO Anime (anime_name)
- VALUES ('Mashle: Magic and Muscles'),
- ('Attack on Titan'),
- ('Jujutsu Kaisen'),
- ('Demon Slayer'),
- ('Chainsaw Man');
-`);
-database.query(`
-    INSERT INTO Reviews (username, comment, anime_name, rating)
+;
+INSERT INTO Anime_reviews (username, comment, anime_name, score)
     VALUES (
     'Adlam4002',
     'Probably the best show I have ever seen',
@@ -64,4 +52,12 @@ database.query(`
     'Benston', 'I stand with Eren', 'Attack on Titan', 5);
     
     
-    `);
+    ;
+ INSERT INTO anime_list (anime_name)
+ VALUES ('Mashle: Magic and Muscles'),
+ ('Attack on Titan'),
+ ('Jujutsu Kaisen'),
+ ('Demon Slayer'),
+ ('Chainsaw Man');
+
+-- I usually use a seed file so I decided to use the supabase SQL editor this time.
