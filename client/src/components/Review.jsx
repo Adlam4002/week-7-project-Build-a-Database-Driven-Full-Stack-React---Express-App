@@ -4,7 +4,6 @@ export default function Review({
   comment,
   score,
   anime_name,
-  onDelete,
 }) {
   async function handleDelete() {
     try {
@@ -20,7 +19,6 @@ export default function Review({
       const data = await response.json();
       if (data.success) {
         console.log("Deleted");
-        onDelete(review_id);
       } else {
         console.error("failed to delete", data.error);
       }
@@ -28,6 +26,7 @@ export default function Review({
       console.error("Delete error", error);
     }
   }
+
   return (
     <>
       <div id="review-box" key={review_id}>
