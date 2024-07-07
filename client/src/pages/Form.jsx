@@ -6,6 +6,7 @@ export default function Form() {
     comment: "",
     anime_id: "",
     score: "",
+    anime_name: "",
   });
   function resetForm() {
     setFormValues({
@@ -13,6 +14,7 @@ export default function Form() {
       comment: "",
       anime_id: "",
       score: "",
+      anime_name: "",
     });
   }
   const [animes, setAnimes] = useState([]);
@@ -32,6 +34,7 @@ export default function Form() {
       const data = await check.json();
       if (data.success) {
         console.log("Review submitted");
+        console.log(formValues);
         resetForm();
       }
     } catch (error) {
