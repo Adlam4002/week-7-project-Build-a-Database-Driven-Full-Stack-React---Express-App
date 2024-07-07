@@ -82,6 +82,7 @@ export default function Form() {
           onChange={handleInputChange}
           required
         >
+          <option value="">Select...</option>
           {animes.map((item) => (
             <option key={item.anime_id} value={item.anime_name}>
               {item.anime_name}
@@ -96,6 +97,7 @@ export default function Form() {
           value={formValues.score}
           required
         >
+          <option value="">Select...</option>
           <option value="1">⭐</option>
           <option value="2">⭐⭐</option>
           <option value="3">⭐⭐⭐</option>
