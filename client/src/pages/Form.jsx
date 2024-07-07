@@ -76,7 +76,7 @@ export default function Form() {
         />{" "}
         <label htmlFor="anime_id"> Which anime?</label>
         <select
-          name="anime_name"
+          name="anime_id"
           id="anime_id-input"
           value={formValues.anime_id}
           onChange={handleInputChange}
