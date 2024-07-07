@@ -76,8 +76,8 @@ button:focus-visible {
 @media (min-width: 1000px) {
   #vid {
     position: relative;
-    width: 560;
-    height: 315;
+    width: 560px;
+    height: 315px;
   }
   button.a {
     border-radius: 8px;
