@@ -3,6 +3,7 @@ export default function Recommendation() {
     <>
       <h3>Recommendation for the month: Hell&apos;s Paradise</h3>
       <iframe
+        id="vid"
         width="560"
         height="315"
         src="https://www.youtube.com/embed/aaHZdwPZX6g?si=oMFY-0SP_-dVuRgP"
