@@ -12,6 +12,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+#vid {
+  position: absolute;
+  left: 0%;
+  width: 430px;
+  height: 240px;
+}
 #navbar {
   display: flex;
 }
@@ -68,6 +74,11 @@ button:focus-visible {
   justify-content: center;
 }
 @media (min-width: 1000px) {
+  #vid {
+    position: relative;
+    width: 560;
+    height: 315;
+  }
   button.a {
     border-radius: 8px;
     border: 1px solid transparent;
