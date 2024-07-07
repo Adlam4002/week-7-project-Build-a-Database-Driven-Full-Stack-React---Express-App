@@ -31,14 +31,16 @@ app.get("/anime-list", async (req, res) => {
   res.json(result.rows);
 });
 app.post("/newreview", async (req, res) => {
-  const { username, comment, anime_name, score } = req.body;
+  const { username, comment, anime_id, score } = req.body;
   try {
     await database.query(
       `
     INSERT INTO Anime_reviews (Username, comment, anime_name, score)
-    VALUES ($1, $2, $3, $4)
+    SELECT $1, $2, anime_name, $3
+    FROM anime_list
+    Where anime_id = $4
     `,
-      [username, comment, anime_name, score]
+      [username, comment, score, anime_id]
     );
     res.status(200).json({ success: true });
   } catch (error) {

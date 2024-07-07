@@ -4,14 +4,14 @@ export default function Form() {
   const [formValues, setFormValues] = useState({
     username: "",
     comment: "",
-    anime_name: "",
+    anime_id: "",
     score: "",
   });
   function resetForm() {
     setFormValues({
       username: "",
       comment: "",
-      anime_name: "",
+      anime_id: "",
       score: "",
     });
   }
@@ -74,17 +74,17 @@ export default function Form() {
           placeholder="Write your review"
           required
         />{" "}
-        <label htmlFor="anime_name"> Which anime?</label>
+        <label htmlFor="anime_id"> Which anime?</label>
         <select
           name="anime_name"
-          id="anime_name-input"
-          value={formValues.anime_name}
+          id="anime_id-input"
+          value={formValues.anime_id}
           onChange={handleInputChange}
           required
         >
           <option value="">Select...</option>
           {animes.map((item) => (
-            <option key={item.anime_id} value={item.anime_name}>
+            <option key={item.anime_id} value={item.anime_id}>
               {item.anime_name}
             </option>
           ))}
