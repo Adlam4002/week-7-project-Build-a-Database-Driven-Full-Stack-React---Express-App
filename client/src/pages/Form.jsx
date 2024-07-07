@@ -6,7 +6,6 @@ export default function Form() {
     comment: "",
     anime_id: "",
     score: "",
-    anime_name: "",
   });
   function resetForm() {
     setFormValues({
@@ -14,7 +13,6 @@ export default function Form() {
       comment: "",
       anime_id: "",
       score: "",
-      anime_name: "",
     });
   }
   const [animes, setAnimes] = useState([]);
@@ -112,7 +110,6 @@ export default function Form() {
       <h3>Review preview</h3>
       <div id="review-box">
         <h4 id="review-username">User: {formValues.username}</h4>{" "}
-        <h4 id="review-aname">{formValues.anime_name}</h4>{" "}
         <h4 id="review-score">Score: {formValues.score}/5</h4>{" "}
         <p id="review-comment">Review: {formValues.comment}</p>
       </div>
